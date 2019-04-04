@@ -1,6 +1,6 @@
 # A Regressive Convolution Neural Network and Support Vector Regression Model for Electricity Consumption Forecasting
 
-To run the code, using your datasets and then call the function: RCNN_SVR.
+To run the code, using your datasets and then call the function: RCNN_SVR.m
 
 If you use the code, please cite our paper. Thanks!
 
