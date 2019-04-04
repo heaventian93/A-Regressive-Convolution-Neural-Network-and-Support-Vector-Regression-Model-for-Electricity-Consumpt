@@ -8,7 +8,8 @@ function [trainingFeatures,testFeatures,MdlStd,YFit]=RCNN_SVR(x_train,x_test,y_t
 % trainingFeatures: N3*N1  (in paper: 50*50   )
 % testFeatures:     N3*N2  (in paper: 50*12   )
 % MdlStd: training SVR classifier
-% YFit: predicting results
+% YFit: predicted results N2*1 (in paper: 12*1)
+
 % Suggest install Matlab 2017b or later
 
 % Please cite our paper if you use our code. Thanks!
@@ -20,7 +21,7 @@ function [trainingFeatures,testFeatures,MdlStd,YFit]=RCNN_SVR(x_train,x_test,y_t
 % Fine tuning the layers using your datasets
 rng 'default';
 layers = [ 
-          imageInputLayer([8 1 1]); % change 8 to your own dataset
+          imageInputLayer([size(x_train,1) 1 1]);
           convolution2dLayer(1,20);
           reluLayer();
           crossChannelNormalizationLayer(1)
